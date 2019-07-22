@@ -1,0 +1,153 @@
+#include <iostream>
+#include <conio.h>
+using namespace std;
+
+
+int main()
+{
+	bool salir =true;
+	int numPal[4];
+	int numPalC[4];
+	while (salir) {
+		int numero;
+		int menu;
+		system("cls");
+		cout << "Ingrese \n0 - 4.26 \n1 - 4.27\n2 - 2.29\n=";
+
+		cin >> menu;
+		switch (menu) {
+		case 0:
+		{
+			//ejercicio 4.26 Palindromo ej, 12321 33333 
+			
+			bool esPal = true;
+			int y = 0;
+			cout << "\nEjercicio 4.26\n";
+			cout << "ingrese cinco digitos: " << endl;
+			for (int i = 0; i <=4; i++)
+			{
+				cout << "[" << i+1 << "] =";
+				cin >> numPal[i];
+				cout << "\n";
+			}
+			
+			for (int x = 4; x >= 0; x--)
+			{
+
+				if (numPal[x] != numPal[y])
+				{
+					esPal = false;
+					if (esPal = false)
+					{
+						break;
+
+					}
+				}
+				y++;
+			}
+			if (esPal)
+			{
+				cout << "\nEs Palindromooooo!!!";
+				for (int i = 0; i <= 4; i++)
+				{
+					cout<<"\n["<<numPal[i]<<"]\n";
+
+
+				
+				}
+				cout << "\nEs igual a...\n ";
+				for (int i = 4; i >= 0; i--)
+				{
+					cout << "\n[" << numPal[i] << "]\n";
+
+
+
+				}
+			}
+			else
+			{
+				cout << "\nNo es palindromoooo :(";
+				for (int i = 0; i <= 4; i++)
+				{
+					cout << "\n[" << numPal[i] << "]\n";
+
+
+
+				}
+				cout << "\nNo es igual a...\n ";
+				for (int w = 4; w >= 0; w--)
+				{
+					cout << "\n[" << numPal[w] << "]\n";
+
+
+
+				}
+			}
+			
+			break;
+		}
+		
+		case 1: {
+			//ejercicio 4.27 Equivalente en binario
+			
+			
+
+			cout << "\nEjercicio 4.27\n";
+			int exp, digito;
+			double binario, decimal;
+			cout << "Ingrese un numero binario(solo 0 o 1 ej.1101): ";
+			cin >> binario;
+			exp = 0;
+			decimal = 0;
+			while (((int)(binario / 10)) != 0)
+			{
+				digito = (int)binario % 10;
+				decimal = decimal + digito * pow(2.0, exp);
+				exp++;
+				binario = (int)(binario / 10);
+			}
+			decimal = decimal + binario * pow(2.0, exp);
+			cout << endl << "Decimal: " << decimal << endl;
+			
+
+			break;
+		}
+		
+		case 2:
+		{
+			//ejercicio 2.29
+			cout << "\nEjercicio 2.29\n";
+			int temp;
+			int res;
+			for (int i = 0; i <= 10; i++)
+			{
+				temp = i;
+				
+				cout << "Entero\t\tCuadrado\tCubo\n";
+				cout << temp << "\t\t" << pow(temp, 2) << "\t\t" << pow(temp,3) << endl;
+				temp = temp + 1;
+				
+			}
+			break;
+		}
+		default:
+			cout << "ingrese 0 al 3";
+			
+		}
+
+
+		int salirn=0;
+		cout << "\nSalir? 1-si 2-no\n=";
+		cin >> salirn;
+		if (salirn == 1)
+		{
+			salir = false;
+		}
+		else if(salirn==2)
+			salir = true;
+		
+	}
+	
+	
+	system("pause");
+}
