@@ -12,11 +12,11 @@ int main()
 		int numero;
 		int menu;
 		system("cls");
-		cout << "Ingrese \n0 - 4.26 \n1 - 4.27\n2 - 2.29\n=";
+		cout << "Ingrese \n1 - 4.26 \n2 - 4.27\n3 - 4.29\n4 - palindromo con numero entero 4.26\n=";
 
 		cin >> menu;
 		switch (menu) {
-		case 0:
+		case 1:
 		{
 			//ejercicio 4.26 Palindromo ej, 12321 33333 
 			
@@ -87,7 +87,7 @@ int main()
 			break;
 		}
 		
-		case 1: {
+		case 2: {
 			//ejercicio 4.27 Equivalente en binario
 			
 			
@@ -113,7 +113,7 @@ int main()
 			break;
 		}
 		
-		case 2:
+		case 3:
 		{
 			//ejercicio 2.29
 			cout << "\nEjercicio 2.29\n";
@@ -130,8 +130,101 @@ int main()
 			}
 			break;
 		}
+		case 4:
+		{
+			//4.26 bien hecho xdxd
+			cout << "Ejercicio 4.26 bien hecho";
+			int num;
+			int arr1[4];
+			int aux,aux2;
+			cout << "\n Ingrese un numero entero de 5 digitos: ";
+			cin >> num;
+			if (num<10000 or num>99999)
+			{
+				cout << "\ntiene que ser un numero de 5 digitos!!!!!!!!\n";
+				break;
+			}
+
+			aux = num / 10000;
+			aux2 = num % 10000;
+			arr1[0] = aux;
+			num = aux2;
+			aux = num / 1000;
+			aux2 = num % 1000;
+			arr1[1] = aux;
+			num = aux2;
+			aux = num / 100;
+			aux2 = num % 100;
+			arr1[2] = aux;
+			num = aux2;
+			aux = num / 10;
+			aux2 = num % 10;
+			arr1[3] = aux;
+			num = aux2;
+			aux = num / 1;
+			aux2 = num % 1;
+			arr1[4] = aux;
+			num = aux2;
+
+			bool esPal = true;
+			int y = 0;
+			////cout << "\nEjercicio 4.26\n";
+			////cout << "ingrese cinco digitos: " << endl;
+			//for (int i = 0; i <= 4; i++)
+			//{
+			//	cout << "[" << i + 1 << "] =";
+			//	cin >> numPal[i];
+			//	cout << "\n";
+			//}
+
+			for (int x = 4; x >= 0; x--)
+			{
+
+				if (arr1[x] != arr1[y])
+				{
+					esPal = false;
+					if (esPal = false)
+					{
+						break;
+
+					}
+				}
+				y++;
+			}
+			if (esPal)
+			{
+				cout << "\nEs Palindromooooo!!!";
+				int w = 4;
+				for (int i = 0; i <= 4; i++)
+				{
+
+					cout << "\n[" << arr1[i] << "]" << "\t[" << arr1[w] << "]\n";
+
+
+					w--;
+				}
+			}
+			else
+			{
+				cout << "\nNo es palindromoooo :(";
+				int w = 4;
+				for (int i = 0; i <= 4; i++)
+				{
+
+					cout << "\n[" << arr1[i] << "]"<< "\t[" << arr1[w] << "]\n";
+
+
+					w--;
+				}
+				
+				
+			}
+
+
+			break;
+		}
 		default:
-			cout << "ingrese 0 al 3";
+			cout << "ingrese 1 al 3";
 			
 		}
 
